@@ -1,56 +1,59 @@
-
 package models;
+
+import java.util.Date;
 
 /**
  *
- * @author Admin
+ * @author Hoang
  */
 public class SucKhoeModel {
-    private int ID;
-    private String maNhanKhau;
-    private String hoTen;
-    private String trinhTrangSucKhoe;
-    private String ghiChu;
+    private int sucKhoeID;
+    private int nhanKhauID;
+    private String trangThaiSucKhoe;
+    private int trieuChungCovid;
+    private Date ngayCapNhat;
 
-    public String getGhiChu() {
-        return ghiChu;
-    }
-
-    public void setGhiChu(String ghiChu) {
-        this.ghiChu = ghiChu;
-    }
-    
-    public int getID() {
-        return ID;
+    public int getSucKhoeID() {
+        return sucKhoeID;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setSucKhoeID(int sucKhoeID) {
+        this.sucKhoeID = sucKhoeID;
     }
 
-    public String getMaNhanKhau() {
-        return maNhanKhau;
+    public int getNhanKhauID() {
+        return nhanKhauID;
     }
 
-    public void setMaNhanKhau(String maNhanKhau) {
-        this.maNhanKhau = maNhanKhau;
+    public void setNhanKhauID(int nhanKhauID) {
+        this.nhanKhauID = nhanKhauID;
     }
 
-    public String getHoTen() {
-        return hoTen;
+    public String getTrangThaiSucKhoe() {
+        return trangThaiSucKhoe;
     }
 
-    public void setHoTen(String hoTen) {
-        this.hoTen = hoTen;
+    public void setTrangThaiSucKhoe(String trangThaiSucKhoe) {
+        this.trangThaiSucKhoe = trangThaiSucKhoe;
     }
 
-    public String getTrinhTrangSucKhoe() {
-        return trinhTrangSucKhoe;
+    public String getTrieuChungCovid() {
+        if(trieuChungCovid == 1) return "Co";
+        else return "Khong";
+    }
+    public int getTrieuChungCovidInt(){
+        return trieuChungCovid;
     }
 
-    public void setTrinhTrangSucKhoe(String trinhTrangSucKhoe) {
-        this.trinhTrangSucKhoe = trinhTrangSucKhoe;
+    public void setTrieuChungCovid(int trieuChungCovid) {
+        this.trieuChungCovid = trieuChungCovid;
     }
-    
-    
+
+    public Date getNgayCapNhat() {
+        return ngayCapNhat;
+    }
+
+    public void setNgayCapNhat(Date ngayCapNhat) {
+        this.ngayCapNhat = ngayCapNhat;
+    }
 }

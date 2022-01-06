@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/Bean/SucKhoeBean.java</file>
+            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/services/HoKhauService.java</file>
+            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/models/SucKhoeModel.java</file>
+            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/services/NhanKhauService.java</file>
+            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/utility/TableModelSucKhoe.java</file>
+            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/services/SucKhoeService.java</file>
+        </group>
     </open-files>
 </project-private>
