@@ -400,7 +400,7 @@ public class ThemMoiSucKhoeFrame extends javax.swing.JFrame {
             if(sucKhoeService.insertSucKhoe(sucKhoeModel)){
                 JOptionPane.showMessageDialog(null, "Thêm thành công");
             }
-            this.parentFrame.setEnabled(true);
+            //this.parentFrame.setEnabled(true);
             dispose();
         }
     }//GEN-LAST:event_SavebtnActionPerformed
