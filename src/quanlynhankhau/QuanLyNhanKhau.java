@@ -17,6 +17,7 @@ public class QuanLyNhanKhau {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
+            System.out.println(e.toString());
         }
 //        MainFrame mainFrame = new MainFrame();
 //        mainFrame.setLocationRelativeTo(null);
