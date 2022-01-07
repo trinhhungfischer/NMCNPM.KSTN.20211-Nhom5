@@ -31,12 +31,15 @@ public class ThemMoiSucKhoeFrame extends javax.swing.JFrame {
         this.parentFrame = parentFrame;
         nhanKhauBean = new NhanKhauBean();
         sucKhoeModel = new SucKhoeModel();
-        parentFrame.setEnabled(false);
+        this.parentFrame.setEnabled(false);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        setTitle("Thêm mới sức khỏe");
         this.addWindowListener(new WindowAdapter(){
             @Override
             public void windowClosing(WindowEvent e) {
-               parentFrame.setEnabled(true);
-               close();
+                if (JOptionPane.showConfirmDialog(null, "Are you sure to close??", "Warning!!", JOptionPane.YES_NO_OPTION) == 0) {
+                    close();
+                }
             }
         });
         
@@ -47,10 +50,8 @@ public class ThemMoiSucKhoeFrame extends javax.swing.JFrame {
         this.soCCCDjtf.setText(""+this.nhanKhauBean.getChungMinhThuModel().getSoCMT());
     }
     private void close() {
-        if (JOptionPane.showConfirmDialog(this, "Are you sure to close??", "Confirm", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION) {
-            this.parentFrame.setEnabled(true);
-            dispose();
-        }
+        this.parentFrame.setEnabled(true);
+        dispose();
     }
 
     /**
@@ -399,15 +400,16 @@ public class ThemMoiSucKhoeFrame extends javax.swing.JFrame {
             sucKhoeModel.setTrangThaiSucKhoe(stringJoiner.toString());
             if(sucKhoeService.insertSucKhoe(sucKhoeModel)){
                 JOptionPane.showMessageDialog(null, "Thêm thành công");
+                close();
             }
-            //this.parentFrame.setEnabled(true);
-            dispose();
         }
     }//GEN-LAST:event_SavebtnActionPerformed
 
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
         // TODO add your handling code here:
-        close();
+        if (JOptionPane.showConfirmDialog(null, "Are you sure to close??", "Warning!!", JOptionPane.YES_NO_OPTION) == 0) {
+            close();
+        }
     }//GEN-LAST:event_backBTNActionPerformed
 
     /**

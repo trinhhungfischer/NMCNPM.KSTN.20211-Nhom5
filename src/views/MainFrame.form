@@ -82,7 +82,7 @@
                           <Component id="ThongKeBtn" alignment="0" max="32767" attributes="0"/>
                           <Component id="SucKhoeBtn" alignment="0" max="32767" attributes="0"/>
                           <Component id="CachLyBtn" alignment="0" max="32767" attributes="0"/>
-                          <Component id="TiemChungBtn" alignment="0" max="32767" attributes="0"/>
+                          <Component id="XetNghiemBtn" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -102,7 +102,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="CachLyBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="TiemChungBtn" min="-2" max="-2" attributes="0"/>
+                      <Component id="XetNghiemBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -300,7 +300,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jlbThongKe1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbSucKhoe" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -309,14 +309,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jlbThongKe1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbSucKhoe" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jlbThongKe1">
+                <Component class="javax.swing.JLabel" name="jlbSucKhoe">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="14" style="1"/>
@@ -344,7 +344,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jlbThongKe2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbCachLy" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -353,14 +353,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jlbThongKe2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbCachLy" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jlbThongKe2">
+                <Component class="javax.swing.JLabel" name="jlbCachLy">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="14" style="1"/>
@@ -376,7 +376,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="TiemChungBtn">
+            <Container class="javax.swing.JPanel" name="XetNghiemBtn">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="66" green="66" red="66" type="rgb"/>
@@ -388,7 +388,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jlbThongKe3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbXetNghiem" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -397,14 +397,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jlbThongKe3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbXetNghiem" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jlbThongKe3">
+                <Component class="javax.swing.JLabel" name="jlbXetNghiem">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Arial" size="14" style="1"/>
@@ -415,7 +415,7 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/Icons/increasing-stocks-graphic.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Ti&#xea;m ch&#x1ee7;ng"/>
+                    <Property name="text" type="java.lang.String" value="X&#xe9;t nghi&#x1ec7;m"/>
                   </Properties>
                 </Component>
               </SubComponents>

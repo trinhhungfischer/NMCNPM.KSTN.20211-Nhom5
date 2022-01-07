@@ -38,8 +38,8 @@ public class SucKhoeModel {
     }
 
     public String getTrieuChungCovid() {
-        if(trieuChungCovid == 1) return "Co";
-        else return "Khong";
+        if(trieuChungCovid == 1) return "Có";
+        else return "Không";
     }
     public int getTrieuChungCovidInt(){
         return trieuChungCovid;

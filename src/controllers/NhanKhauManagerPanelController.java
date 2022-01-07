@@ -125,7 +125,7 @@ public class NhanKhauManagerPanelController {
         jpnView.validate();
         jpnView.repaint();
     }
-
+    
     public void setParentJFrame(JFrame parentJFrame) {
         this.parentJFrame = parentJFrame;
     }
@@ -149,5 +149,5 @@ public class NhanKhauManagerPanelController {
     public void setJtfSearch(JTextField jtfSearch) {
         this.jtfSearch = jtfSearch;
     }
- 
+    
 }

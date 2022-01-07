@@ -16,12 +16,13 @@ import javax.swing.JPanel;
 import views.HoKhauManagePanel;
 import views.HomePagePanel;
 import views.NhanKhauManagePanel;
+import views.SucKhoeManagePanel;
 import views.ThongKePanel;
 import views.TimKiemPanel;
 
 /**
  *
- * @author Hai
+ * @author Hoang
  */
 public class MainController {
     private JFrame jfrMain;
@@ -56,6 +57,9 @@ public class MainController {
                     break;
                 case "ThongKe":
                     view = new ThongKePanel(this.jfrMain);
+                    break;
+                case "SucKhoe":
+                    view = new SucKhoeManagePanel(this.jfrMain);
                     break;
                 //any more
                 default:
@@ -126,6 +130,9 @@ public class MainController {
                     break;
                 case "ThongKe":
                     view = new ThongKePanel(this.jfrMain);
+                    break;
+                case "SucKhoe":
+                    view = new SucKhoeManagePanel(this.jfrMain);
                     break;
                 default:
                     break;

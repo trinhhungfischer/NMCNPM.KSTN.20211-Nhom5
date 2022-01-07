@@ -22,39 +22,43 @@ import models.SucKhoeModel;
 public class SucKhoeService {
     public SucKhoeBean getSucKhoeBean(int idNhanKhau){
         SucKhoeBean temp = new SucKhoeBean();
-        temp.getNhanKhauBean().getNhanKhauModel().setID(idNhanKhau);
+        temp.getNhanKhauBean().getNhanKhauModel().setID(-1);
         try{
             Connection connection = MysqlConnection.getMysqlConnection();
             String sql = "SELECT * FROM nhan_khau INNER JOIN chung_minh_thu ON nhan_khau.ID = chung_minh_thu.idNhanKhau WHERE nhan_khau.ID = " + idNhanKhau;
             PreparedStatement prst = (PreparedStatement)connection.prepareStatement(sql);
             ResultSet rs_l = prst.executeQuery();
             while(rs_l.next()){
+                temp.getNhanKhauBean().getNhanKhauModel().setID(rs_l.getInt("ID"));
                 temp.getNhanKhauBean().getNhanKhauModel().setHoTen(rs_l.getString("hoTen"));
                 temp.getNhanKhauBean().getNhanKhauModel().setDiaChiHienNay(rs_l.getString("diaChiHienNay"));
                 temp.getNhanKhauBean().getNhanKhauModel().setNamSinh(rs_l.getDate("namSinh"));
                 temp.getNhanKhauBean().getChungMinhThuModel().setSoCMT(rs_l.getString("soCMT"));
             }
             prst.close();
-                
-            List<SucKhoeModel> listSucKhoe = new ArrayList<>();
-            sql = "SELECT * FROM suc_khoe where nhanKhauID = " + idNhanKhau +  " ORDER BY sucKhoeID DESC";
-            prst = (PreparedStatement)connection.prepareStatement(sql);
-            rs_l = prst.executeQuery();
-            while(rs_l.next()){
-                SucKhoeModel sucKhoeModel = new SucKhoeModel();
-                sucKhoeModel.setNhanKhauID(idNhanKhau);
-                sucKhoeModel.setSucKhoeID(rs_l.getInt("sucKhoeID"));
-                sucKhoeModel.setTrangThaiSucKhoe(rs_l.getString("trangThaiSucKhoe"));
-                sucKhoeModel.setTrieuChungCovid(rs_l.getInt("trieuChungCovid"));
-                sucKhoeModel.setNgayCapNhat(rs_l.getDate("ngayCapNhat"));
-                listSucKhoe.add(sucKhoeModel);
-            }
+            idNhanKhau = temp.getNhanKhauBean().getNhanKhauModel().getID();
+            if(idNhanKhau > 0){
+                List<SucKhoeModel> listSucKhoe = new ArrayList<>();
+                sql = "SELECT * FROM suc_khoe where nhanKhauID = " + idNhanKhau +  " ORDER BY sucKhoeID DESC";
+                prst = (PreparedStatement)connection.prepareStatement(sql);
+                rs_l = prst.executeQuery();
+                while(rs_l.next()){
+                    SucKhoeModel sucKhoeModel = new SucKhoeModel();
+                    sucKhoeModel.setNhanKhauID(idNhanKhau);
+                    sucKhoeModel.setSucKhoeID(rs_l.getInt("sucKhoeID"));
+                    sucKhoeModel.setTrangThaiSucKhoe(rs_l.getString("trangThaiSucKhoe"));
+                    sucKhoeModel.setTrieuChungCovid(rs_l.getInt("trieuChungCovid"));
+                    sucKhoeModel.setNgayCapNhat(rs_l.getDate("ngayCapNhat"));
+                    listSucKhoe.add(sucKhoeModel);
+                }
             prst.close();
             temp.setListSucKhoe(listSucKhoe);
             temp.setSucKhoeCuoi(listSucKhoe.get(0));
+            }
         } catch (Exception e) {
         JOptionPane.showMessageDialog(null, "Lỗi");
         }
+   
         return temp;
     }
     
@@ -166,11 +170,30 @@ public class SucKhoeService {
         }
         return list;
     }
-    public static void main(String[] args) {
-        SucKhoeService service = new SucKhoeService();
-        List<SucKhoeBean> list = service.statisticSucKhoe(null, "2021-08-13", "Toan Bo" , "Binh thuong");
-        for(int i = 0; i < list.size(); i++){
-            System.out.println(StringService.covertToString(list.get(i).toString()));
+    
+    public List<SucKhoeBean> search(String keyword){
+        if(keyword.trim().isEmpty()){
+            return getListSucKhoe();
         }
+        NhanKhauService nhanKhauService = new NhanKhauService();
+        List<SucKhoeBean> list = new ArrayList<>();
+        List<NhanKhauBean> listNhanKhauBeans = nhanKhauService.search(keyword);
+        for(int i = 0; i< listNhanKhauBeans.size(); i++){
+            NhanKhauBean nhanKhauBean = listNhanKhauBeans.get(i);
+            int idNhanKhau = nhanKhauBean.getNhanKhauModel().getID();
+            SucKhoeBean temp = getSucKhoeBean(idNhanKhau);
+            if(temp.getNhanKhauBean().getNhanKhauModel().getID() > 0){
+                list.add(temp);
+            }
+        }
+        return list;
     }
+    
+//    public static void main(String[] args) {
+//        SucKhoeService service = new SucKhoeService();
+//        List<SucKhoeBean> list = service.search("Dũng");
+//        for(int i = 0; i < list.size(); i++){
+//            System.out.println(StringService.covertToString(list.get(i).toString()));
+//        }
+//    }
 }

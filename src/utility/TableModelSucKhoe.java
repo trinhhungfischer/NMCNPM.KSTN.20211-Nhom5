@@ -27,8 +27,8 @@ public class TableModelSucKhoe {
     Object[] obj;
     obj = new Object[columns];
     listItem.forEach((SucKhoeBean item) -> {
-        obj[0] = item.getNhanKhauBean().getNhanKhauModel().getID();
-        obj[1] = item.getNhanKhauBean().getNhanKhauModel().getHoTen();
+        obj[0] = item.getNhanKhauBean().getNhanKhauModel().getHoTen();
+        obj[1] = item.getNhanKhauBean().getChungMinhThuModel().getSoCMT();
         obj[2] = item.getSucKhoeCuoi().getNgayCapNhat();
         obj[3] = item.getSucKhoeCuoi().getTrieuChungCovid();
         obj[4] = item.getSucKhoeCuoi().getTrangThaiSucKhoe();
