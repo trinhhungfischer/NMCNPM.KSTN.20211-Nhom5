@@ -12,6 +12,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.EventObject;
 import java.util.List;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -32,23 +33,30 @@ public class SucKhoeManagerPanelController {
     private JPanel jpnView;
     private JTextField jtfSearch;
     private JTextField jtfsoLuong;
+    private JComboBox fieldCBB;
     private SucKhoeService sucKhoeService;
     private List<SucKhoeBean> listSucKhoeBeans;
     private TableModelSucKhoe tableModelSucKhoe;
     private final String[] COLUMNS = {"Họ tên", "Số CCCD", "Ngày cập nhật", "Triệu chứng Covid", "Tình trạng sức khỏe"};
     private JFrame parentJFrame;
     
-    public SucKhoeManagerPanelController(JPanel jpnView, JTextField jtfSearch, JTextField jtfSoLuong){
+    public SucKhoeManagerPanelController(JPanel jpnView, JTextField jtfSearch, JTextField jtfSoLuong, JComboBox fieldCBB){
         this.jpnView = jpnView;
         this.jtfSearch = jtfSearch;
         this.jtfsoLuong = jtfSoLuong;
+        this.fieldCBB = fieldCBB;
         tableModelSucKhoe = new TableModelSucKhoe();
         this.sucKhoeService = new SucKhoeService();
         this.listSucKhoeBeans = this.sucKhoeService.getListSucKhoe();
         setSoLuong();
         initAction();
     }
-
+    public void reset(){
+        this.listSucKhoeBeans = this.sucKhoeService.getListSucKhoe();
+        setDataTable();
+        setSoLuong();
+    }
+    
     public SucKhoeManagerPanelController() {
     }
     public void setSoLuong(){
@@ -67,6 +75,7 @@ public class SucKhoeManagerPanelController {
             @Override
             public void removeUpdate(DocumentEvent e) {
                 String key = jtfSearch.getText();
+                //String field = (String)fieldCBB.getSelectedItem();
                 listSucKhoeBeans = sucKhoeService.search(key.trim());
                 setSoLuong();
                 setDataTable();
@@ -75,6 +84,7 @@ public class SucKhoeManagerPanelController {
             @Override
             public void changedUpdate(DocumentEvent e) {
                 String key = jtfSearch.getText();
+               // String field = (String)fieldCBB.getSelectedItem();
                 listSucKhoeBeans = sucKhoeService.search(key.trim());
                 setSoLuong();
                 setDataTable();
