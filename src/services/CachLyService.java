@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import models.CachLyModel;
 import models.ChungMinhThuModel;
 import models.NhanKhauModel;
+import utility.DateString;
 
 
 /**
@@ -33,6 +34,9 @@ public class CachLyService {
                            "FROM nhan_khau nk JOIN chung_minh_thu cmt ON cmt.idNhanKhau=nk.ID"+
                            "WHERE nk.ID = "+String.valueOf(nhanKhauID)
                            + ";"
+                           + "FROM nhan_khau nk JOIN chung_minh_thu cmt ON cmt.idNhanKhau=nk.ID\n"
+                           + "WHERE nk.ID = '"+String.valueOf(nhanKhauID)
+                           + "';"
                     ;
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
@@ -123,7 +127,7 @@ public class CachLyService {
                 chungMinhThuModel.setSoCMT(rs.getString("soCMT"));
                 chungMinhThuModel.setNgayCap(rs.getDate("ngayCap"));
                 chungMinhThuModel.setNoiCap(rs.getString("noiCap"));
-                
+                list.add(cachLyBean);
             }
             preparedStatement.close();
             connection.close();
@@ -175,6 +179,7 @@ public class CachLyService {
                 chungMinhThuModel.setNgayCap(rs.getDate("ngayCap"));
                 chungMinhThuModel.setNoiCap(rs.getString("noiCap"));
                 
+                list.add(cachLyBean);
             }
             preparedStatement.close();
             connection.close();
@@ -196,6 +201,8 @@ public class CachLyService {
         List<CachLyBean> list = new ArrayList<>();
         
         Calendar calendar = Calendar.getInstance();
+        
+        DateString dateString =new DateString();
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
             String query = "SELECT cl.cachLyID,cl.nhanKhauID,cl.ngayBatDauCachLy, cl.noiCachLy, cl.soNgayCachLy, "
@@ -222,17 +229,19 @@ public class CachLyService {
                 liststr.add(str);
             }
             if(boolCheckbox.get(1)){
-                String str="( DATE_ADD(ngayBatDauCachLy, INTERVAL soNgayCachLy DAY) >= '";
-                calendar.setTime(date.get(2));
-                str+= String.valueOf(calendar.get(Calendar.YEAR))+"-"+
-                      String.valueOf(calendar.get(Calendar.MONTH)+1)+"-"+
-                      String.valueOf(calendar.get(Calendar.DATE));
-                str+="' AND DATE_ADD(ngayBatDauCachLy, INTERVAL soNgayCachLy DAY) <= '";
-                calendar.setTime(date.get(3));
-                str+= String.valueOf(calendar.get(Calendar.YEAR))+"-"+
-                      String.valueOf(calendar.get(Calendar.MONTH)+1)+"-"+
-                      String.valueOf(calendar.get(Calendar.DATE));
-                str+="' )";
+                String str ="( ngayBatDauCachLy >= '"
+                        +dateString.dateToString(date.get(0))
+                        +"' AND ngayBatDauCachLy <= '"
+                        +dateString.dateToString(date.get(1))
+                        +"' )";
+                liststr.add(str);
+            }
+            if(boolCheckbox.get(1)){
+                String str="( ngayBatDauCachLy >= '"
+                        +dateString.dateToString(date.get(2))
+                        +"' AND ngayBatDauCachLy <= '"
+                        +dateString.dateToString(date.get(3))
+                        +"' )";
                 liststr.add(str);
             }
             if(boolCheckbox.get(2)&& !mucdo.isEmpty()){
@@ -283,6 +292,7 @@ public class CachLyService {
                 chungMinhThuModel.setNgayCap(rs.getDate("ngayCap"));
                 chungMinhThuModel.setNoiCap(rs.getString("noiCap"));
                 
+                list.add(cachLyBean);
             }
             preparedStatement.close();
             connection.close();

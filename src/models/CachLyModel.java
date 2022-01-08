@@ -2,6 +2,7 @@ package models;
 
 import java.util.Calendar;
 import java.util.Date;
+import utility.DateString;
 
 /**
  *
@@ -103,7 +104,7 @@ public class CachLyModel {
         else c.setTime(getNgayKetThucCachLy());
         return String.valueOf(c.get(Calendar.YEAR))+"-"
               +String.valueOf(c.get(Calendar.MONTH)+1)+"-"
-              +String.valueOf(c.get(Calendar.DATE))  ;
-        
+              +String.valueOf(c.get(Calendar.DATE));
+
     }
 }
