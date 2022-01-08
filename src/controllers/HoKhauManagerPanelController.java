@@ -24,7 +24,7 @@ import views.infoViews.InfoJframe;
  *
  * @author Hai
  */
-public class HoKhauPanelController {
+public class HoKhauManagerPanelController {
     private List<HoKhauBean> list;
     private JTextField searchJtf;
     private JPanel tableJpn;
@@ -33,7 +33,7 @@ public class HoKhauPanelController {
     private final String COLUNMS[] = {"Mã hộ khẩu", "Họ tên chủ hộ", "Địa chỉ"}; 
     private JFrame parentJFrame;
 
-    public HoKhauPanelController(JTextField searchJtf, JPanel tableJpn) {
+    public HoKhauManagerPanelController(JTextField searchJtf, JPanel tableJpn) {
         this.searchJtf = searchJtf;
         this.tableJpn = tableJpn;
         this.list = hoKhauService.getListHoKhau();

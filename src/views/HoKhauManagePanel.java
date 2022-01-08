@@ -5,7 +5,7 @@
  */
 package views;
 
-import controllers.HoKhauPanelController;
+import controllers.HoKhauManagerPanelController;
 import javax.swing.JFrame;
 import views.HoKhauManagerFrame.ChuyenDiNoiKhac;
 import views.HoKhauManagerFrame.TachHoKhau;
@@ -18,14 +18,14 @@ import views.HoKhauManagerFrame.ThemMoiHoKhau;
 public class HoKhauManagePanel extends javax.swing.JPanel {
     
     private JFrame parentFrame;
-    private HoKhauPanelController controller;
+    private HoKhauManagerPanelController controller;
     /**
      * Creates new form HoKhauManagePanel
      */
     public HoKhauManagePanel(JFrame parentFrame) {
         this.parentFrame = parentFrame;
         initComponents();
-        controller = new HoKhauPanelController(jtfSearch, tableJpn);
+        controller = new HoKhauManagerPanelController(jtfSearch, tableJpn);
         controller.setParentJFrame(parentFrame);
     }
 
