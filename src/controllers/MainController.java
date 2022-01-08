@@ -17,12 +17,13 @@ import views.CachLyManagePanel;
 import views.HoKhauManagePanel;
 import views.HomePagePanel;
 import views.NhanKhauManagePanel;
+import views.SucKhoeManagePanel;
 import views.ThongKePanel;
 import views.XetNghiemManagePanel;
 
 /**
  *
- * @author Hai
+ * @author Hoang
  */
 public class MainController {
     private JFrame jfrMain;
@@ -54,6 +55,9 @@ public class MainController {
                     break;
                 case "ThongKe":
                     view = new ThongKePanel(this.jfrMain);
+                    break;
+                case "SucKhoe":
+                    view = new SucKhoeManagePanel(this.jfrMain);
                     break;
                 //any more
                 case "CachLy":
@@ -133,6 +137,9 @@ public class MainController {
                     break;
                 case "XetNghiem":
                     view = new XetNghiemManagePanel(this.jfrMain);
+                    break;
+                case "SucKhoe":
+                    view = new SucKhoeManagePanel(this.jfrMain);
                     break;
                 default:
                     break;
