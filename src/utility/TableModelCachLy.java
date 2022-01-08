@@ -3,15 +3,11 @@ package utility;
 import Bean.CachLyBean;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-/**
- *
- * @author Hai
- */
+
+
 public class TableModelCachLy {
-    
-    public DefaultTableModel setTableCachLy(List<CachLyBean> listItem){
-        String[] listColumn={"Nhân khẩu ID","Tên nhân khẩu","Ngày bắt đầu cách ly","Nơi cách ly",
-            "Ngày kết thúc cách ly","Mức độ cách ly","Lý do cách ly"};
+
+    public DefaultTableModel setTableCachLy(List<CachLyBean> listItem, String[] listColumn) {
         final int columns = listColumn.length;
         DefaultTableModel dtm = new DefaultTableModel()  {
             @Override
@@ -40,4 +36,7 @@ public class TableModelCachLy {
     }
     
 
+        // TODO: Thêm các item ở đây nha
+        
+        
 }
