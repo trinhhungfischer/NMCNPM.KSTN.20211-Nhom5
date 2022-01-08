@@ -72,3 +72,4 @@ public class XetNghiemBean {
         res += "</table></div></html>";
         return res;
     }
+}
