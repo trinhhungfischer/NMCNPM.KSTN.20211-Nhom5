@@ -162,9 +162,9 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel10" min="-2" pref="30" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="cancelBtn" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="acceptBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="acceptBtn" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="40" max="32767" attributes="0"/>
               </Group>
@@ -337,7 +337,7 @@
         <Component class="javax.swing.JComboBox" name="ketquaxetnghiem">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;C&#xe1;ch ly t&#x1ead;p trung&quot;, &quot;C&#xe1;ch ly t&#x1ea1;i nh&#xe0;&quot; })" type="code"/>
+              <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;D&#x1b0;&#x1a1;ng t&#xed;nh&quot;, &quot;&#xc2;m t&#xed;nh&quot; })" type="code"/>
             </Property>
           </Properties>
           <Events>
@@ -359,7 +359,7 @@
         <Component class="javax.swing.JComboBox" name="hinhthucxetnghiem">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Ch&#x1b0;a r&#xf5;&quot;, &quot;F0&quot;, &quot;F1&quot;, &quot;F2&quot; })" type="code"/>
+              <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Test nhanh&quot;, &quot;PCR&quot; })" type="code"/>
             </Property>
           </Properties>
           <Events>

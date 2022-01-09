@@ -201,7 +201,7 @@ public class ThemMoiXetNghiem extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel13.setText("Hình thức xét nghiệm");
 
-        ketquaxetnghiem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cách ly tập trung", "Cách ly tại nhà" }));
+        ketquaxetnghiem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dương tính", "Âm tính" }));
         ketquaxetnghiem.setFont(new java.awt.Font("Arial", 0, 14));
         ketquaxetnghiem.setBackground(Color.WHITE);
         ketquaxetnghiem.addActionListener(new java.awt.event.ActionListener() {
@@ -213,7 +213,7 @@ public class ThemMoiXetNghiem extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel14.setText("Kết quả xét nghiệm");
 
-        hinhthucxetnghiem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chưa rõ", "F0", "F1", "F2" }));
+        hinhthucxetnghiem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Test nhanh", "PCR" }));
         hinhthucxetnghiem.setFont(new java.awt.Font("Arial", 0, 14));
         hinhthucxetnghiem.setBackground(Color.WHITE);
         hinhthucxetnghiem.addActionListener(new java.awt.event.ActionListener() {
@@ -322,7 +322,7 @@ public class ThemMoiXetNghiem extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cancelBtn)
                     .addComponent(acceptBtn))
                 .addContainerGap(40, Short.MAX_VALUE))
