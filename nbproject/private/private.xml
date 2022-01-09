@@ -3,14 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/services/CachLyService.java</file>
-            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/models/CachLyModel.java</file>
-            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/utility/TableModelCachLy.java</file>
-            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/services/NhanKhauService.java</file>
+            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/Bean/DanhMucBean.java</file>
+            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/Bean/HoKhauBean.java</file>
             <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/views/SucKhoeManagePanel.java</file>
-            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/controllers/SucKhoeManagerPanelController.java</file>
-            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/services/SucKhoeService.java</file>
-            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/Bean/CachLyBean.java</file>
         </group>
     </open-files>
 </project-private>
