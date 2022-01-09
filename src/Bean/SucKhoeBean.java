@@ -6,7 +6,6 @@ package Bean;
 
 import java.util.ArrayList;
 import java.util.List;
-import models.NhanKhauModel;
 import models.SucKhoeModel;
 
 /**

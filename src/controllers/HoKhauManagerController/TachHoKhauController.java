@@ -2,7 +2,6 @@ package controllers.HoKhauManagerController;
 
 import Bean.HoKhauBean;
 import Bean.MemOfFamily;
-import Bean.NhanKhauBean;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;

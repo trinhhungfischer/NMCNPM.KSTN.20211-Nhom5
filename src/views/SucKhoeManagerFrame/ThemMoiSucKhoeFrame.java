@@ -5,7 +5,6 @@
 package views.SucKhoeManagerFrame;
 
 import Bean.NhanKhauBean;
-import Bean.SucKhoeBean;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.StringJoiner;
@@ -14,7 +13,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import models.SucKhoeModel;
 import services.SucKhoeService;
-import views.HoKhauManagerFrame.ChoosePeople;
 import views.SucKhoeManagePanel;
 
 /**

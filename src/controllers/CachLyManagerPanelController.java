@@ -2,7 +2,6 @@
 package controllers;
 
 import Bean.CachLyBean;
-import Bean.SucKhoeBean;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -16,12 +15,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
-import models.NhanKhauModel;
 import services.CachLyService;
-import services.SucKhoeService;
 import utility.TableModelCachLy;
 import views.infoViews.InfoJframe;
 

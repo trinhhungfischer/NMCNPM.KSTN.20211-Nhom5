@@ -1,10 +1,7 @@
 package views.CachLyManagerFrame;
 
-import views.SucKhoeManagerFrame.*;
-import views.HoKhauManagerFrame.*;
 import Bean.NhanKhauBean;
 import controllers.CachLyManagerController.ChoosePeopleCachLyController;
-import controllers.SucKhoeManagerController.ChoosePeopleSucKhoeController;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
