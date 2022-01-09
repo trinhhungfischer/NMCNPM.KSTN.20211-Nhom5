@@ -4,18 +4,12 @@
  */
 package views;
 
-import Bean.SucKhoeBean;
 import controllers.SucKhoeManagerPanelController;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.List;
 import java.util.StringJoiner;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 import services.StringService;
-import services.SucKhoeService;
-import utility.TableModelSucKhoe;
 import views.SucKhoeManagerFrame.ThemMoiSucKhoeFrame;
 
 /**

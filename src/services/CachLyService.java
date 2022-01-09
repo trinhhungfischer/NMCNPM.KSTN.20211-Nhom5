@@ -17,7 +17,7 @@ import utility.DateString;
 
 /**
  *
- * @author Hai
+ * @author Bang
  */
 public class CachLyService {
     

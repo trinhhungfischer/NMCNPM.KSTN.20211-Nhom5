@@ -1,16 +1,11 @@
 package controllers.XetNghiemManagerController;
 
-import controllers.NhanKhauManagerController.*;
-import Bean.NhanKhauBean;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import models.XetNghiemModel;
-import models.ChungMinhThuModel;
-import models.NhanKhauModel;
 import services.MysqlConnection;
 
 /**

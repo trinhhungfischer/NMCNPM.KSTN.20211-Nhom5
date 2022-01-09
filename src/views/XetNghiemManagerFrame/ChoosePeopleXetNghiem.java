@@ -1,5 +1,4 @@
 package views.XetNghiemManagerFrame;
-import views.HoKhauManagerFrame.*;
 import Bean.NhanKhauBean;
 import controllers.XetNghiemManagerController.ChoosePeopleXetNghiemController;
 import java.awt.event.WindowAdapter;

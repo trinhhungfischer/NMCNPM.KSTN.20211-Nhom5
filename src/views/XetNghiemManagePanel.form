@@ -380,8 +380,8 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="X&#xe9;t nghi&#x1ec7;m d&#x1b0;&#x1a1;ng t&#xed;nh"/>
             <Property name="actionCommand" type="java.lang.String" value="&#xc2;m t&#xed;nh"/>
+            <Property name="label" type="java.lang.String" value="&#xc2;m t&#xed;nh"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxketqua2ActionPerformed"/>
@@ -392,8 +392,8 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Ti&#x1ebf;p x&#xfa;c v&#x1edb;i F0,1,2"/>
             <Property name="actionCommand" type="java.lang.String" value="D&#x1b0;&#x1a1;ng t&#xed;nh"/>
+            <Property name="label" type="java.lang.String" value="D&#x1b0;&#x1a1;ng t&#xed;nh"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxketqua1ActionPerformed"/>
