@@ -1,10 +1,11 @@
 package models;
 
 import java.util.Date;
-
+import java.util.Date;
+import utility.DateString;
 /**
  *
- * @author Hai
+ * @author Dat
  */
 public class XetNghiemModel {
 
@@ -14,6 +15,7 @@ public class XetNghiemModel {
     private String noiXetNghiem;
     private String hinhThucXetNghiem;
     private String ketQuaXetNghiem;
+   
 
     public int getXetNghiemID() {
         return xetNghiemID;
