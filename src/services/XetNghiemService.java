@@ -199,30 +199,30 @@ public class XetNghiemService {
                 str+="' )";
                 liststr.add(str);
             }
-            if(boolCheckbox.get(1)){
-                String str ="( ngayXetNghiem >= '"
-                        +dateString.dateToString(date.get(0))
-                        +"' AND ngayXetNghiem <= '"
-                        +dateString.dateToString(date.get(1))
-                        +"' )";
-                liststr.add(str);
-            }
-            if(boolCheckbox.get(1)){
-                String str="( ngayXetNghiem >= '"
-                        +dateString.dateToString(date.get(2))
-                        +"' AND ngayXetNghiem <= '"
-                        +dateString.dateToString(date.get(3))
-                        +"' )";
-                liststr.add(str);
-            }
-            if(boolCheckbox.get(2)&& !hinhthuc.isEmpty()){
+//            if(boolCheckbox.get(1)){
+//                String str ="( ngayXetNghiem >= '"
+//                        +dateString.dateToString(date.get(0))
+//                        +"' AND ngayXetNghiem <= '"
+//                        +dateString.dateToString(date.get(1))
+//                        +"' )";
+//                liststr.add(str);
+//            }
+//            if(boolCheckbox.get(1)){
+//                String str="( ngayXetNghiem >= '"
+//                        +dateString.dateToString(date.get(2))
+//                        +"' AND ngayXetNghiem <= '"
+//                        +dateString.dateToString(date.get(3))
+//                        +"' )";
+//                liststr.add(str);
+//            }
+            if(boolCheckbox.get(1)&& !hinhthuc.isEmpty()){
                 String str="( hinhThucXetNghiem IN (";
                 str+=" '"+hinhthuc.get(0) +"' ";
                 for(int i=1;i<hinhthuc.size();i++)str+=", '"+hinhthuc.get(i)+"' ";
                 str+=") )";
                 liststr.add(str);
             }
-            if(boolCheckbox.get(3)&& !ketqua.isEmpty()){
+            if(boolCheckbox.get(2)&& !ketqua.isEmpty()){
                 for(int i=0;i<ketqua.size();i++){
                     if(ketqua.get(i).equalsIgnoreCase("khác"))
                         ketqua.set(i, "( ketQuaXetNghiem NOT LIKE '%dương tính%' AND  ketQuaXetNghiem NOT LIKE '%âm tính%' )");
@@ -232,7 +232,7 @@ public class XetNghiemService {
                 liststr.add("( "+String.join(" OR ", ketqua)+" )" );
                 
             }
-            if(!liststr.isEmpty())query=query+"WHERE "+String.join(" AND ",liststr );
+            if(!liststr.isEmpty())query=query+"WHERE "+ String.join(" AND ",liststr );
             query+="\n;";
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
@@ -265,7 +265,7 @@ public class XetNghiemService {
             preparedStatement.close();
             connection.close();
         } catch (Exception e) {
-            System.out.println("Loi tai dong 300 Xet Nghiem Service");
+            System.out.println(e.toString());
         }
         return list;
     }
