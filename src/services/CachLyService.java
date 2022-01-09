@@ -31,11 +31,8 @@ public class CachLyService {
             Connection connection = MysqlConnection.getMysqlConnection();
             String query = "SELECT nk.hoTen,nk.namSinh,nk.noiThuongTru,nk.gioiTinh,\n" +
                            "cmt.ID cmtID,cmt.soCMT,cmt.ngayCap,cmt.noiCap\n" +
-                           "FROM nhan_khau nk JOIN chung_minh_thu cmt ON cmt.idNhanKhau=nk.ID"+
-                           "WHERE nk.ID = "+String.valueOf(nhanKhauID)
-                           + ";"
-                           + "FROM nhan_khau nk JOIN chung_minh_thu cmt ON cmt.idNhanKhau=nk.ID\n"
-                           + "WHERE nk.ID = '"+String.valueOf(nhanKhauID)
+                           "FROM nhan_khau nk JOIN chung_minh_thu cmt ON cmt.idNhanKhau=nk.ID\n"+
+                           "WHERE nk.ID = '"+String.valueOf(nhanKhauID)
                            + "';"
                     ;
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
@@ -53,7 +50,7 @@ public class CachLyService {
                 chungMinhThuModel.setSoCMT(rs.getString("soCMT"));
                 chungMinhThuModel.setNgayCap(rs.getDate("ngayCap"));
                 chungMinhThuModel.setNoiCap(rs.getString("noiCap"));
-                
+
             }
             preparedStatement.close();
             query = "SELECT cachLyID,nhanKhauID,ngayBatDauCachLy,noiCachLy,soNgayCachLy,"
@@ -80,10 +77,10 @@ public class CachLyService {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        
-        
-        
-        
+
+
+
+
         return cachLyBean;
     }
     
@@ -132,7 +129,7 @@ public class CachLyService {
             preparedStatement.close();
             connection.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("Loi tai dong 135 Cach Ly Service");
         }
         return list;
     }
@@ -184,7 +181,7 @@ public class CachLyService {
             preparedStatement.close();
             connection.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("Loi tai dong 187 Cach Ly Service");
         }
         return list;
         
@@ -297,7 +294,7 @@ public class CachLyService {
             preparedStatement.close();
             connection.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("Loi tai dong 300 Cach Ly Service");
         }
         return list;
     }
