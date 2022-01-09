@@ -1,10 +1,11 @@
 package models;
 
 import java.util.Date;
-
+import java.util.Date;
+import utility.DateString;
 /**
  *
- * @author Hai
+ * @author Dat
  */
 public class XetNghiemModel {
 

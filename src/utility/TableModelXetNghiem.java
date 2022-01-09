@@ -28,7 +28,7 @@ public class TableModelXetNghiem {
         Object[] obj;
         obj = new Object[columns];
         listItem.forEach((XetNghiemBean item) -> {  
-            obj[0]= item.getXetNghiemModel().getNhanKhauID();
+            obj[0]= item.getNhanKhauModel().getID();
             obj[1]= item.getNhanKhauModel().getHoTen();
             obj[2]= dateString.dateToString(item.getListXetNghiemModels().get(0).getNgayXetNghiem());
             obj[3]= item.getListXetNghiemModels().get(0).getNoiXetNghiem();
