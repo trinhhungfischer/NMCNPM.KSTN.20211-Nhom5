@@ -40,20 +40,24 @@ public class SucKhoeService {
             if(idNhanKhau > 0){
                 List<SucKhoeModel> listSucKhoe = new ArrayList<>();
                 sql = "SELECT * FROM suc_khoe where nhanKhauID = " + idNhanKhau +  " ORDER BY sucKhoeID DESC";
+                temp.getNhanKhauBean().getNhanKhauModel().setID(-1);
                 prst = (PreparedStatement)connection.prepareStatement(sql);
                 rs_l = prst.executeQuery();
                 while(rs_l.next()){
+                    temp.getNhanKhauBean().getNhanKhauModel().setID(rs_l.getInt("nhanKhauID"));
                     SucKhoeModel sucKhoeModel = new SucKhoeModel();
-                    sucKhoeModel.setNhanKhauID(idNhanKhau);
+                    sucKhoeModel.setNhanKhauID(rs_l.getInt("nhanKhauID"));
                     sucKhoeModel.setSucKhoeID(rs_l.getInt("sucKhoeID"));
                     sucKhoeModel.setTrangThaiSucKhoe(rs_l.getString("trangThaiSucKhoe"));
                     sucKhoeModel.setTrieuChungCovid(rs_l.getInt("trieuChungCovid"));
                     sucKhoeModel.setNgayCapNhat(rs_l.getDate("ngayCapNhat"));
                     listSucKhoe.add(sucKhoeModel);
                 }
-            prst.close();
-            temp.setListSucKhoe(listSucKhoe);
-            temp.setSucKhoeCuoi(listSucKhoe.get(0));
+                prst.close();
+                if(temp.getNhanKhauBean().getNhanKhauModel().getID() > 0){
+                    temp.setListSucKhoe(listSucKhoe);
+                    temp.setSucKhoeCuoi(listSucKhoe.get(0));
+                }
             }
         } catch (Exception e) {
         JOptionPane.showMessageDialog(null, "Lỗi");
@@ -177,7 +181,7 @@ public class SucKhoeService {
         }
         NhanKhauService nhanKhauService = new NhanKhauService();
         List<SucKhoeBean> list = new ArrayList<>();
-        List<NhanKhauBean> listNhanKhauBeans = nhanKhauService.search(keyword);
+        List<NhanKhauBean> listNhanKhauBeans = nhanKhauService.search(keyword.trim());
         for(int i = 0; i< listNhanKhauBeans.size(); i++){
             NhanKhauBean nhanKhauBean = listNhanKhauBeans.get(i);
             int idNhanKhau = nhanKhauBean.getNhanKhauModel().getID();

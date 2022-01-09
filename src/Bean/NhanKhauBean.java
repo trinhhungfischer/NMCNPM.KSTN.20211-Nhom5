@@ -42,7 +42,7 @@ public class NhanKhauBean {
     public ChungMinhThuModel getChungMinhThuModel() {
         return chungMinhThuModel;
     }
-
+    
     public void setChungMinhThuModel(ChungMinhThuModel chungMinhThuModel) {
         this.chungMinhThuModel = chungMinhThuModel;
     }

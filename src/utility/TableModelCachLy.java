@@ -30,6 +30,9 @@ public class TableModelCachLy {
         listItem.forEach((CachLyBean item) -> {  
             obj[0]= item.getNhanKhauModel().getID();
             obj[1]= item.getNhanKhauModel().getHoTen();
+            obj[2]= item.getListCachLyModels().get(0).getNgay(0);
+            obj[3]= item.getListCachLyModels().get(0).getNoiCachLy();
+            obj[4]= item.getListCachLyModels().get(0).getNgay(1);
             obj[2]= dateString.dateToString(item.getListCachLyModels().get(0).getNgayBatDauCachLy());
             obj[3]= item.getListCachLyModels().get(0).getNoiCachLy();
             obj[4]= dateString.dateToString(item.getListCachLyModels().get(0).getNgayKetThucCachLy());
@@ -40,5 +43,9 @@ public class TableModelCachLy {
         return dtm;
     }
     
+
+        // TODO: Thêm các item ở đây nha
+        
+        
 
 }

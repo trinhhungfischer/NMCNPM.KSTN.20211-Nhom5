@@ -99,10 +99,12 @@ public class CachLyModel {
     }
     public String getNgay(int i){
         if(i>1||i<0)return null;
-        DateString dateString=new DateString();
-        if(i==0)return dateString.dateToString(ngayBatDauCachLy);
-        else return dateString.dateToString(getNgayKetThucCachLy());
-        
-        
+        Calendar c = Calendar.getInstance();
+        if(i==0)c.setTime(ngayBatDauCachLy);
+        else c.setTime(getNgayKetThucCachLy());
+        return String.valueOf(c.get(Calendar.YEAR))+"-"
+              +String.valueOf(c.get(Calendar.MONTH)+1)+"-"
+              +String.valueOf(c.get(Calendar.DATE));
+
     }
 }

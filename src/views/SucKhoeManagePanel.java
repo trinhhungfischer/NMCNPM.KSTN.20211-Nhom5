@@ -32,7 +32,7 @@ public class SucKhoeManagePanel extends javax.swing.JPanel {
     public SucKhoeManagePanel(JFrame parentFrame) {
         this.parentJFrame = parentFrame;
         initComponents();
-        controller = new SucKhoeManagerPanelController(this.tablePanel, this.jtfSearch, this.jtfsoLuong);
+        controller = new SucKhoeManagerPanelController(this.tablePanel, this.jtfSearch, this.jtfsoLuong, this.fieldCBB);
         controller.setParentJFrame(this.parentJFrame);
         controller.setDataTable();
     }
@@ -65,6 +65,9 @@ public class SucKhoeManagePanel extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jtfKhac = new javax.swing.JTextField();
         thongKeBtn = new javax.swing.JButton();
+        timKiemLbl = new javax.swing.JLabel();
+        fieldCBB = new javax.swing.JComboBox<>();
+        resetBtn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(855, 465));
@@ -166,6 +169,20 @@ public class SucKhoeManagePanel extends javax.swing.JPanel {
             }
         });
 
+        timKiemLbl.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        timKiemLbl.setText("Tìm kiếm");
+
+        fieldCBB.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        fieldCBB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Họ tên", "Số CCCD" }));
+
+        resetBtn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        resetBtn.setText("Làm lại");
+        resetBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -203,7 +220,7 @@ public class SucKhoeManagePanel extends javax.swing.JPanel {
                                         .addComponent(hoCB)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(sotCB)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(thongKeBtn)
@@ -215,18 +232,29 @@ public class SucKhoeManagePanel extends javax.swing.JPanel {
                                 .addGap(35, 35, 35))))
                     .addComponent(tablePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(timKiemLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jtfSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(fieldCBB, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(themMoiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(resetBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(themMoiBtn)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtfSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(themMoiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(timKiemLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jtfSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(fieldCBB))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(themMoiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(resetBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tablePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
@@ -262,7 +290,7 @@ public class SucKhoeManagePanel extends javax.swing.JPanel {
                         .addComponent(jtfsoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(thongKeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -280,7 +308,7 @@ public class SucKhoeManagePanel extends javax.swing.JPanel {
 
     private void themMoiBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themMoiBtnActionPerformed
         // TODO add your handling code here:
-        ThemMoiSucKhoeFrame themMoiSucKhoeFrame = new ThemMoiSucKhoeFrame(this.parentJFrame);
+        ThemMoiSucKhoeFrame themMoiSucKhoeFrame = new ThemMoiSucKhoeFrame(this.parentJFrame, this);
         themMoiSucKhoeFrame.setLocationRelativeTo(null);
         themMoiSucKhoeFrame.setResizable(false);
         themMoiSucKhoeFrame.setVisible(true);
@@ -320,10 +348,23 @@ public class SucKhoeManagePanel extends javax.swing.JPanel {
         controller.statistic(tuNgay, denNgay, StringService.covertToString(trieuChung), tinhTrangSucKhoe.toString());
     }//GEN-LAST:event_thongKeBtnActionPerformed
 
+    private void resetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetBtnActionPerformed
+        // TODO add your handling code here:
+        controller.reset();
+    }//GEN-LAST:event_resetBtnActionPerformed
 
+    public SucKhoeManagerPanelController getController() {
+        return controller;
+    }
+
+    public void setController(SucKhoeManagerPanelController controller) {
+        this.controller = controller;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox binhThuongCB;
     private com.toedter.calendar.JDateChooser denNgayJDC;
+    private javax.swing.JComboBox<String> fieldCBB;
     private javax.swing.JCheckBox hoCB;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -335,10 +376,12 @@ public class SucKhoeManagePanel extends javax.swing.JPanel {
     private javax.swing.JTextField jtfKhac;
     private javax.swing.JTextField jtfSearch;
     private javax.swing.JTextField jtfsoLuong;
+    private javax.swing.JButton resetBtn;
     private javax.swing.JCheckBox sotCB;
     private javax.swing.JPanel tablePanel;
     private javax.swing.JButton themMoiBtn;
     private javax.swing.JButton thongKeBtn;
+    private javax.swing.JLabel timKiemLbl;
     private javax.swing.JComboBox<String> trieuChungCBB;
     private com.toedter.calendar.JDateChooser tuNgayJDC;
     // End of variables declaration//GEN-END:variables

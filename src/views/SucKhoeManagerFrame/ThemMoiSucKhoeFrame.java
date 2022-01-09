@@ -11,9 +11,11 @@ import java.awt.event.WindowEvent;
 import java.util.StringJoiner;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import models.SucKhoeModel;
 import services.SucKhoeService;
 import views.HoKhauManagerFrame.ChoosePeople;
+import views.SucKhoeManagePanel;
 
 /**
  *
@@ -23,12 +25,14 @@ public class ThemMoiSucKhoeFrame extends javax.swing.JFrame {
     private NhanKhauBean nhanKhauBean;
     private SucKhoeModel sucKhoeModel;
     private JFrame parentFrame;
+    private JPanel parentPanel;
     /**
      * Creates new form TheMoiSucKhoe
      */
-    public ThemMoiSucKhoeFrame(JFrame parentFrame) {
+    public ThemMoiSucKhoeFrame(JFrame parentFrame, JPanel parentPanel) {
         initComponents();
         this.parentFrame = parentFrame;
+        this.parentPanel = parentPanel;
         nhanKhauBean = new NhanKhauBean();
         sucKhoeModel = new SucKhoeModel();
         this.parentFrame.setEnabled(false);
@@ -400,6 +404,8 @@ public class ThemMoiSucKhoeFrame extends javax.swing.JFrame {
             sucKhoeModel.setTrangThaiSucKhoe(stringJoiner.toString());
             if(sucKhoeService.insertSucKhoe(sucKhoeModel)){
                 JOptionPane.showMessageDialog(null, "Thêm thành công");
+                SucKhoeManagePanel sucKhoeManagePanel = (SucKhoeManagePanel)this.parentPanel;
+                sucKhoeManagePanel.getController().reset();
                 close();
             }
         }

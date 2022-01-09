@@ -31,8 +31,11 @@ public class CachLyService {
             Connection connection = MysqlConnection.getMysqlConnection();
             String query = "SELECT nk.hoTen,nk.namSinh,nk.noiThuongTru,nk.gioiTinh,\n" +
                            "cmt.ID cmtID,cmt.soCMT,cmt.ngayCap,cmt.noiCap\n" +
-                           "FROM nhan_khau nk JOIN chung_minh_thu cmt ON cmt.idNhanKhau=nk.ID\n"+
-                           "WHERE nk.ID = '"+String.valueOf(nhanKhauID)
+                           "FROM nhan_khau nk JOIN chung_minh_thu cmt ON cmt.idNhanKhau=nk.ID"+
+                           "WHERE nk.ID = "+String.valueOf(nhanKhauID)
+                           + ";"
+                           + "FROM nhan_khau nk JOIN chung_minh_thu cmt ON cmt.idNhanKhau=nk.ID\n"
+                           + "WHERE nk.ID = '"+String.valueOf(nhanKhauID)
                            + "';"
                     ;
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
@@ -85,7 +88,7 @@ public class CachLyService {
     }
     
     public List<CachLyBean> getListCachLy(){
-        List<CachLyBean> list = new ArrayList<CachLyBean>();
+        List<CachLyBean> list = new ArrayList<>();
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
             String query = "SELECT cl.cachLyID,cl.nhanKhauID,cl.ngayBatDauCachLy, cl.noiCachLy, cl.soNgayCachLy, "
@@ -135,7 +138,7 @@ public class CachLyService {
     }
     
     public List<CachLyBean> findListCachLy(String field,String value){
-        List<CachLyBean> list = new ArrayList<CachLyBean>();
+        List<CachLyBean> list = new ArrayList<>();
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
             String query = "SELECT cl.cachLyID,cl.nhanKhauID,cl.ngayBatDauCachLy, cl.noiCachLy, cl.soNgayCachLy, "
@@ -175,6 +178,7 @@ public class CachLyService {
                 chungMinhThuModel.setSoCMT(rs.getString("soCMT"));
                 chungMinhThuModel.setNgayCap(rs.getDate("ngayCap"));
                 chungMinhThuModel.setNoiCap(rs.getString("noiCap"));
+                
                 list.add(cachLyBean);
             }
             preparedStatement.close();
@@ -194,7 +198,9 @@ public class CachLyService {
         lydo là list các string đc chọn trong {"tiếp xúc","dương tính","khác"}
     */
     public List<CachLyBean> thongKeListCachLy(List<Boolean> boolCheckbox, List<Date> date,List<String> mucdo,List<String> lydo){
-        List<CachLyBean> list = new ArrayList<CachLyBean>();
+        List<CachLyBean> list = new ArrayList<>();
+        
+        Calendar calendar = Calendar.getInstance();
         
         DateString dateString =new DateString();
         try {
@@ -209,7 +215,21 @@ public class CachLyService {
                     ;
             List<String> liststr=new ArrayList<String>();
             if(boolCheckbox.get(0)){
-                String str="( ngayBatDauCachLy >= '"
+                String str="( ngayBatDauCachLy >= '";
+                calendar.setTime(date.get(0));
+                str+= String.valueOf(calendar.get(Calendar.YEAR))+"-"+
+                      String.valueOf(calendar.get(Calendar.MONTH)+1)+"-"+
+                      String.valueOf(calendar.get(Calendar.DATE));
+                str+="' AND ngayBatDauCachLy <= '";
+                calendar.setTime(date.get(1));
+                str+= String.valueOf(calendar.get(Calendar.YEAR))+"-"+
+                      String.valueOf(calendar.get(Calendar.MONTH)+1)+"-"+
+                      String.valueOf(calendar.get(Calendar.DATE));
+                str+="' )";
+                liststr.add(str);
+            }
+            if(boolCheckbox.get(1)){
+                String str ="( ngayBatDauCachLy >= '"
                         +dateString.dateToString(date.get(0))
                         +"' AND ngayBatDauCachLy <= '"
                         +dateString.dateToString(date.get(1))
@@ -271,6 +291,7 @@ public class CachLyService {
                 chungMinhThuModel.setSoCMT(rs.getString("soCMT"));
                 chungMinhThuModel.setNgayCap(rs.getDate("ngayCap"));
                 chungMinhThuModel.setNoiCap(rs.getString("noiCap"));
+                
                 list.add(cachLyBean);
             }
             preparedStatement.close();

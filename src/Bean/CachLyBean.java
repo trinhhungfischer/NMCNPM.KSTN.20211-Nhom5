@@ -76,6 +76,29 @@ public class CachLyBean {
         for(CachLyModel cachLyModel: listCachLyModels){
             res += "<tr>"
                 +  "<td>"
+                + cachLyModel.getNgay(0)
+                +  "/td"    
+                +  "<td>"
+                + cachLyModel.getNoiCachLy()
+                +  "/td"
+                +  "<td>"
+                + String.valueOf(cachLyModel.getSoNgayCachLy())
+                +  "/td" 
+                +  "<td>"
+                + cachLyModel.getNgay(1)
+                +  "/td" 
+                +  "<td>"
+                + cachLyModel.getMucDoCachLy()
+                +  "/td"
+                +  "<td>"
+                + cachLyModel.getHinhThucCachLy()
+                +  "/td"
+                +  "<td>"
+                + cachLyModel.getNguoiChamSoc()
+                +  "/td"
+                +  "<td>"
+                + cachLyModel.getLyDoCachLy()
+                +  "/td"
                 + cachLyModel.getNgay(0)  
                 +  "<td>"
                 + cachLyModel.getNoiCachLy()
@@ -98,6 +121,5 @@ public class CachLyBean {
                 + "</div></html>";
         return res;
     }
-
 
 }
