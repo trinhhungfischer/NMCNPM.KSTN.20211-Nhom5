@@ -97,22 +97,22 @@ public class XetNghiemPanelController {
     }
     
     public void thongke(List<Boolean> boolCheckbox, List<Date> date,List<String> hinhthuc,List<String> ketqua){
-//        this.listXetNghiemBeans = this.xetNghiemService.thongKeListXetNghiem(boolCheckbox, date, hinhthuc, ketqua);
-//        setSoLuong();
-//        setDataTable();        
+        this.listXetNghiemBeans = this.xetNghiemService.thongKeListXetNghiem(boolCheckbox, date, hinhthuc, ketqua);
+        setSoLuong();
+        setDataTable();        
     }
     
     public void chiTiet(int i){
-//        XetNghiemBean temp = listXetNghiemBeans.get(i);
-//        XetNghiemBean info = xetNghiemService.getXetNghiem(temp.getNhanKhauModel().getID());
-//        InfoJframe infoJframe = new InfoJframe(info.toString(), parentJFrame);
-//        infoJframe.setLocationRelativeTo(null);
-//        infoJframe.setVisible(true);
+        XetNghiemBean temp = listXetNghiemBeans.get(i);
+        XetNghiemBean info = xetNghiemService.getXetNghiem(temp.getNhanKhauModel().getID());
+        InfoJframe infoJframe = new InfoJframe(info.toString(), parentJFrame);
+        infoJframe.setLocationRelativeTo(null);
+        infoJframe.setVisible(true);
     }
     public void timkiem(String field,String value){
-//        this.listXetNghiemBeans = this.xetNghiemService.findListXetNghiem(field, value);
-//        setSoLuong();
-//        setDataTable();
+        this.listXetNghiemBeans = this.xetNghiemService.findListXetNghiem(field, value);
+        setSoLuong();
+        setDataTable();
     }
     
     public void reset(){

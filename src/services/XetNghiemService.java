@@ -79,7 +79,7 @@ public class XetNghiemService {
                     + "cmt.soCMT,cmt.ngayCap,cmt.noiCap \n" 
                     + "FROM xet_nghiem xn JOIN nhan_khau nk ON xn.nhanKhauID=nk.ID \n" 
                     + "JOIN chung_minh_thu cmt ON nk.ID= cmt.idNhanKhau \n" 
-                    + "JOIN (SELECT xetNghiemID, ngayXetNghiem) FROM xet_nghiem GROUP BY nhanKhauID) maxxn ON xn.xetNghiemID=maxxn.xetNghiemID\n" 
+                    + "JOIN (SELECT xetNghiemID, ngayXetNghiem FROM xet_nghiem GROUP BY nhanKhauID) maxxn ON xn.xetNghiemID=maxxn.xetNghiemID\n" 
                     +";";
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
