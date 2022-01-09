@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 import javax.swing.JOptionPane;
 import models.SucKhoeModel;
 
@@ -140,20 +141,38 @@ public class SucKhoeService {
     }
     public List<SucKhoeBean> statisticSucKhoe(String tuNgay, String denNgay, String trieuChung, String tinhTrangSucKhoe){
         List<SucKhoeBean> list = new ArrayList<>();
-        String query = "SELECT nhanKhauID, MAX(sucKhoeID) FROM suc_khoe WHERE";
-        query += " suc_khoe.trangThaiSucKhoe LIKE '%" + tinhTrangSucKhoe + "%'";
-        if(tuNgay != null) {
-            query += " AND suc_khoe.ngayCapNhat >= '" + tuNgay + "'";
+        String query = "SELECT nhanKhauID, MAX(sucKhoeID) FROM suc_khoe ";
+        StringJoiner condition = new StringJoiner(" AND ");
+        if(tuNgay != null) condition.add("suc_khoe.ngayCapNhat >= '" + tuNgay + "'");
+        if(denNgay != null) condition.add("suc_khoe.ngayCapNhat <= '" + denNgay + "'");
+        if(trieuChung != null){
+            if(trieuChung.equals("Co")){
+                condition.add("suc_khoe.trieuChungCovid = 1");
+            }
+            if(trieuChung.equals("Khong")){
+                condition.add("suc_khoe.trieuChungCovid = 0");
+            }
         }
-        if(denNgay != null){
-           query += " AND suc_khoe.ngayCapNhat <= '" + denNgay + "'";
-        } 
-        if(trieuChung.equals("Co")) {
-            query += " AND suc_khoe.trieuChungCovid == 1";
+        if(tinhTrangSucKhoe != null){
+            condition.add("suc_khoe.trangThaiSucKhoe LIKE '%" + tinhTrangSucKhoe + "%'");
         }
-        if(trieuChung.equals("Khong")){
-            query += " AND suc_khoe.trieuChungCovid == 0";
+        if(condition.length() > 0){
+            query += "WHERE ";
+            query += condition.toString();
         }
+//        query += " suc_khoe.trangThaiSucKhoe LIKE '%" + tinhTrangSucKhoe + "%'";
+//        if(tuNgay != null) {
+//            query += " AND suc_khoe.ngayCapNhat >= '" + tuNgay + "'";
+//        }
+//        if(denNgay != null){
+//           query += " AND suc_khoe.ngayCapNhat <= '" + denNgay + "'";
+//        } 
+//        if(trieuChung.equals("Co")) {
+//            query += " AND suc_khoe.trieuChungCovid == 1";
+//        }
+//        if(trieuChung.equals("Khong")){
+//            query += " AND suc_khoe.trieuChungCovid == 0";
+//        }
         query += " GROUP BY nhanKhauID ORDER BY MAX(sucKhoeID) DESC";
         try{
             Connection connection = MysqlConnection.getMysqlConnection();
