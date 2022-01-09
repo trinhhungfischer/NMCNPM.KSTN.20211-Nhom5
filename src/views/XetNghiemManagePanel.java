@@ -1,20 +1,11 @@
 package views;
-import Bean.XetNghiemBean;
 import controllers.XetNghiemPanelController;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.StringJoiner;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import services.StringService;
-import services.XetNghiemService;
-import utility.TableModelXetNghiem;
 import views.XetNghiemManagerFrame.ThemMoiXetNghiem;
 /**
  *
@@ -178,8 +169,8 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
         });
 
         jCheckBoxketqua2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jCheckBoxketqua2.setText("Xét nghiệm dương tính");
         jCheckBoxketqua2.setActionCommand("Âm tính");
+        jCheckBoxketqua2.setLabel("Âm tính");
         jCheckBoxketqua2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBoxketqua2ActionPerformed(evt);
@@ -187,8 +178,8 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
         });
 
         jCheckBoxketqua1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jCheckBoxketqua1.setText("Tiếp xúc với F0,1,2");
         jCheckBoxketqua1.setActionCommand("Dương tính");
+        jCheckBoxketqua1.setLabel("Dương tính");
         jCheckBoxketqua1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBoxketqua1ActionPerformed(evt);

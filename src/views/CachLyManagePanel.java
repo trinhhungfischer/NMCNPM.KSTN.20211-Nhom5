@@ -4,25 +4,14 @@
  */
 package views;
 
-import Bean.SucKhoeBean;
 import controllers.CachLyManagerPanelController;
-import controllers.SucKhoeManagerPanelController;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.StringJoiner;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import services.StringService;
-import services.SucKhoeService;
-import utility.TableModelSucKhoe;
 import views.CachLyManagerFrame.AddNewCachLyJFrame;
-import views.SucKhoeManagerFrame.ThemMoiSucKhoeFrame;
 
 /**
  *

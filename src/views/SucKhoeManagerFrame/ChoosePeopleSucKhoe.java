@@ -1,6 +1,5 @@
 package views.SucKhoeManagerFrame;
 
-import views.HoKhauManagerFrame.*;
 import Bean.NhanKhauBean;
 import controllers.SucKhoeManagerController.ChoosePeopleSucKhoeController;
 import java.awt.event.WindowAdapter;
