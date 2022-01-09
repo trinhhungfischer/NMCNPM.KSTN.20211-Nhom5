@@ -3,6 +3,7 @@ package Bean;
 import java.util.ArrayList;
 import java.util.List;
 import Bean.NhanKhauBean;
+import models.NhanKhauModel;
 import models.XetNghiemModel;
 import models.ChungMinhThuModel;
 
@@ -10,6 +11,15 @@ public class XetNghiemBean {
     private XetNghiemModel xetNghiemModel;
     private NhanKhauBean nhanKhauBean;
     private ChungMinhThuModel chungMinhThuModel;
+    private NhanKhauModel nhanKhauModel;
+
+    public NhanKhauModel getNhanKhauModel() {
+        return nhanKhauModel;
+    }
+
+    public void setNhanKhauModel(NhanKhauModel nhanKhauModel) {
+        this.nhanKhauModel = nhanKhauModel;
+    }
     private List<XetNghiemModel> listXetNghiemModels;
 
     public XetNghiemBean(XetNghiemModel xetNghiemModel, List<XetNghiemModel> listXetNghiemModels, NhanKhauBean nhanKhauBean, ChungMinhThuModel chungMinhThuModel) {
@@ -84,4 +94,5 @@ public class XetNghiemBean {
         res += "</table></div></html>";
         return res;
     }
+
 }

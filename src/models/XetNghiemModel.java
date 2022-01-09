@@ -14,6 +14,7 @@ public class XetNghiemModel {
     private String noiXetNghiem;
     private String hinhThucXetNghiem;
     private String ketQuaXetNghiem;
+   
 
     public int getXetNghiemID() {
         return xetNghiemID;
