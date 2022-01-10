@@ -6,6 +6,7 @@
 package views;
 
 import Bean.DanhMucBean;
+import controllers.LoginController;
 import controllers.MainController;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -28,9 +29,11 @@ public class MainFrame extends javax.swing.JFrame {
         setTitle("QUẢN LÝ NHÂN KHẨU");
         List<DanhMucBean> listDanhMuc = new ArrayList<>();
         listDanhMuc.add(new DanhMucBean("TrangChu", Home, jblTrangChu));
-        listDanhMuc.add(new DanhMucBean("NhanKhau", NhanKhauBtn, jlbNhanKhau));
-        listDanhMuc.add(new DanhMucBean("HoKhau", HoKhauBtn, jlbHoKhau));
-        listDanhMuc.add(new DanhMucBean("ThongKe", ThongKeBtn, jlbThongKe));
+        if (LoginController.currentUser.getRoles() == 1) {
+            listDanhMuc.add(new DanhMucBean("NhanKhau", NhanKhauBtn, jlbNhanKhau));
+            listDanhMuc.add(new DanhMucBean("HoKhau", HoKhauBtn, jlbHoKhau));
+            listDanhMuc.add(new DanhMucBean("ThongKe", ThongKeBtn, jlbThongKe));
+        }
         listDanhMuc.add(new DanhMucBean("SucKhoe", SucKhoeBtn, jlbSucKhoe));
         listDanhMuc.add(new DanhMucBean("XetNghiem", XetNghiemBtn, jlbXetNghiem));
         listDanhMuc.add(new DanhMucBean("CachLy", CachLyBtn, jlbCachLy));
