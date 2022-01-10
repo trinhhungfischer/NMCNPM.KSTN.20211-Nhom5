@@ -130,7 +130,7 @@ public class XetNghiemManagePanel extends javax.swing.JPanel {
         });
 
         jComboBoxField.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jComboBoxField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhân khẩu ID", "Tên nhân khẩu", "Ngày bắt đầu cách ly", "Nơi cách ly", "Mức độ cách ly", "Lý do cách ly" }));
+        jComboBoxField.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhân khẩu ID", "Tên nhân khẩu"}));
         jComboBoxField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxFieldActionPerformed(evt);
