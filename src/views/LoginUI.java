@@ -42,7 +42,7 @@ public class LoginUI extends javax.swing.JFrame {
         String userName = txbUserName.getText();
         String password = String.valueOf(txbPasswd.getPassword());
         try {
-            if (this.cont.login(userName, password)) {
+            if (this.cont.login(userName, password) != 0) {
                 dispose();
                 MainFrame mainFrame = new MainFrame();
                 mainFrame.setLocationRelativeTo(null);
