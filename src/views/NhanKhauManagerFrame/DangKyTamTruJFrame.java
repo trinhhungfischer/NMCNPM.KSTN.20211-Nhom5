@@ -341,6 +341,7 @@ public class DangKyTamTruJFrame extends javax.swing.JFrame {
             this.tamTruModel.setDenNgay(denNgayDc.getDate());
             this.tamTruModel.setLyDo(lyDoTar.getText().trim());
             if (this.controller.addNew(this.tamTruModel)) {
+                JOptionPane.showMessageDialog(null, "Thêm mới thành công");
                 this.parentFrame.setEnabled(true);
                 dispose();
             }

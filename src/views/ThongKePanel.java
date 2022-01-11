@@ -2,6 +2,7 @@ package views;
 
 import controllers.ThongKePanelController;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -208,6 +209,7 @@ public class ThongKePanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.controller.setData();
+        JOptionPane.showMessageDialog(null, "Số lượng: " + controller.getSoLuong());
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

@@ -8,6 +8,15 @@ public class UserMoldel {
     private int ID;
     private String userName;
     private String passwd;
+    private int roles;
+
+    public int getRoles() {
+        return roles;
+    }
+
+    public void setRoles(int roles) {
+        this.roles = roles;
+    }
 
     public int getID() {
         return ID;

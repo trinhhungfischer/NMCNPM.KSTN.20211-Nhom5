@@ -236,8 +236,8 @@ public class HoKhauService {
         }
         // xoa cac thanh vien
         
-        hoKhauBean.getListThanhVienCuaHo().forEach((ThanhVienCuaHoModel item) -> {
-            String sql = "DELETE FROM thanh_vien_cua_ho WHERE idNhanKhau = " + item.getIdHoKhau();
+        hoKhauBean.getListNhanKhauModels().forEach((NhanKhauModel item) -> {
+            String sql = "DELETE FROM thanh_vien_cua_ho WHERE idNhanKhau = " + item.getID();
             try {
                 Connection connection = MysqlConnection.getMysqlConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(query);

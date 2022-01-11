@@ -307,7 +307,7 @@
               <Font name="Arial" size="14" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Nh&#xe2;n kh&#x1ea9;u ID&quot;, &quot;T&#xea;n nh&#xe2;n kh&#x1ea9;u&quot;, &quot;Ng&#xe0;y b&#x1eaf;t &#x111;&#x1ea7;u c&#xe1;ch ly&quot;, &quot;N&#x1a1;i c&#xe1;ch ly&quot;, &quot;M&#x1ee9;c &#x111;&#x1ed9; c&#xe1;ch ly&quot;, &quot;L&#xfd; do c&#xe1;ch ly&quot; })" type="code"/>
+              <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Nh&#xe2;n kh&#x1ea9;u ID&quot;, &quot;T&#xea;n nh&#xe2;n kh&#x1ea9;u&quot;})" type="code"/>
             </Property>
           </Properties>
           <Events>

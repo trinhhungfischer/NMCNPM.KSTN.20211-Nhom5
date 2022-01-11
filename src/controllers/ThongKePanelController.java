@@ -5,6 +5,7 @@ import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.util.ArrayList;
+import java.util.EventObject;
 import java.util.List;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -95,7 +96,13 @@ public class ThongKePanelController {
             listItem.add(nhankhau.getNhanKhauModel());
         });
         DefaultTableModel model = classTableModel.setTableNhanKhau(listItem, COLUMNS);
-        JTable table = new JTable(model);
+        JTable table = new JTable(model) {
+            @Override
+            public boolean editCellAt(int row, int column, EventObject e) {
+                return false;
+            }
+            
+        };
         
         // thiet ke bang
         
@@ -118,7 +125,9 @@ public class ThongKePanelController {
         jpnView.validate();
         jpnView.repaint();
     }
-
+    public int getSoLuong(){
+        return listNhanKhauBeans.size();
+    }
     public JComboBox getGenderJcb() {
         return GenderJcb;
     }

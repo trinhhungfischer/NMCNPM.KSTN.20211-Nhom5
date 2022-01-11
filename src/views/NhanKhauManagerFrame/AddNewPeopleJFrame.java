@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import models.ChungMinhThuModel;
 import models.NhanKhauModel;
+import services.StringService;
 
 /**
  *
@@ -718,6 +719,8 @@ public class AddNewPeopleJFrame extends javax.swing.JFrame {
             return false;
         }
         // check dinh dang so chung minh thu
+        String soCCCD = StringService.covertToString(soCMTTxb.getText().trim());
+        if(soCCCD.equalsIgnoreCase("Moi sinh")) return true;
         try {
                 long d = Long.parseLong(soCMTTxb.getText());
             } catch (Exception e) {

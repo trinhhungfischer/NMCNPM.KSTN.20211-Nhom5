@@ -26,7 +26,10 @@ public class HomeCotroller {
     public void setData() {
         try {
             Connection connection = MysqlConnection.getMysqlConnection();
-            String query = "SELECT COUNT(*) AS tong FROM nhan_khau";
+//            String query = "SELECT COUNT(*) AS tong FROM nhan_khau";
+            String query = "SELECT COUNT(*) tong FROM nhan_khau WHERE nhan_khau.ID not in (SELECT khai_tu.idNguoiChet ID from khai_tu)" 
+                     + "and nhan_khau.ID not in (SELECT tam_vang.idNhanKhau ID FROM tam_vang WHERE tam_vang.denNgay > CURRENT_DATE) "
+                    + "and nhan_khau.ID not in (SELECT tam_tru.idNhanKhau ID FROM tam_tru WHERE tam_tru.denNgay < CURRENT_DATE)";
             PreparedStatement preparedStatement = (PreparedStatement)connection.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()){
@@ -34,7 +37,8 @@ public class HomeCotroller {
             }
             preparedStatement.close();
             
-            query = "SELECT COUNT(*) AS tong FROM ho_khau";
+//            query = "SELECT COUNT(*) AS tong FROM ho_khau WHERE ";
+            query = "SELECT COUNT(*) as tong FROM ho_khau WHERE ho_khau.ngayChuyenDi is null";
             preparedStatement = (PreparedStatement)connection.prepareStatement(query);
             rs = preparedStatement.executeQuery();
             while (rs.next()){

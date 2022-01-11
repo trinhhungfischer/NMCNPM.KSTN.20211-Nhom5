@@ -3,7 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/views/SucKhoeManagerFrame/ThemMoiSucKhoeFrame.java</file>
+            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/Bean/HoKhauBean.java</file>
+            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/models/ThanhVienCuaHoModel.java</file>
+            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/controllers/ThongKePanelController.java</file>
+            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/Bean/MemOfFamily.java</file>
+            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/views/ThongKePanel.java</file>
+            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/services/HoKhauService.java</file>
+            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/controllers/LoginController.java</file>
+            <file>file:/C:/Users/huyho/Documents/NetBeansProjects/NMCNPM.KSTN.20211-Nhom5/src/controllers/HoKhauManagerController/TachHoKhauController.java</file>
         </group>
     </open-files>
 </project-private>
