@@ -26,10 +26,11 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="tableJpn" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="tachHoKhauBtn" alignment="1" min="-2" pref="120" max="-2" attributes="0"/>
-                          <Component id="chuyenDiBtn" alignment="1" min="-2" pref="120" max="-2" attributes="0"/>
-                          <Component id="themMoiBtn" min="-2" pref="120" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="tachHoKhauBtn" alignment="0" max="32767" attributes="0"/>
+                          <Component id="chuyenDiBtn" alignment="0" max="32767" attributes="0"/>
+                          <Component id="themMoiBtn" max="32767" attributes="0"/>
+                          <Component id="insertBtn" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -54,7 +55,9 @@
                       <Component id="tachHoKhauBtn" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="chuyenDiBtn" min="-2" pref="30" max="-2" attributes="0"/>
-                      <EmptySpace pref="263" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="insertBtn" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace pref="215" max="32767" attributes="0"/>
                   </Group>
                   <Component id="tableJpn" max="32767" attributes="0"/>
               </Group>
@@ -130,5 +133,16 @@
         </DimensionLayout>
       </Layout>
     </Container>
+    <Component class="javax.swing.JButton" name="insertBtn">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Thay &#x111;&#x1ed5;i"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insertBtnActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>

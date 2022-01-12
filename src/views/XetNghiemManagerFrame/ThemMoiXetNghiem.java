@@ -355,10 +355,12 @@ public class ThemMoiXetNghiem extends javax.swing.JFrame {
                 this.xetNghiemModel.setNhanKhauID(Integer.valueOf(jTextFieldNhanKhauID.getText()));
                 this.xetNghiemModel.setNgayXetNghiem(ngaybatdau.getDate());
                 this.xetNghiemModel.setNoiXetNghiem(noixetnghiem.getText());
-                
+                this.xetNghiemModel.setHinhThucXetNghiem((String)hinhthucxetnghiem.getSelectedItem());
+                this.xetNghiemModel.setKetQuaXetNghiem((String)ketquaxetnghiem.getSelectedItem());
                 
 
                 if (this.controller.addNewXetNghiem(this.xetNghiemModel)) {
+                    JOptionPane.showMessageDialog(null, "Thêm thành công");
                     this.parentFrame.setEnabled(true);
                     dispose();
                 }
@@ -391,7 +393,7 @@ public class ThemMoiXetNghiem extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_hinhthucxetnghiemActionPerformed
 
-        private boolean validateForm() {
+    private boolean validateForm() {
         return (!noixetnghiem.getText().trim().isEmpty())
                 && checknhanKhauID()
                 ;

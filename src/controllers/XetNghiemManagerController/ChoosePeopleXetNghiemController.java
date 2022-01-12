@@ -99,7 +99,7 @@ public class ChoosePeopleXetNghiemController {
 //                JOptionPane.showConfirmDialog(null, table.getSelectedRow());
                 if (e.getClickCount() > 1) {
                     NhanKhauBean temp = list.get(table.getSelectedRow());
-                    NhanKhauBean info = nhanKhauService.getNhanKhau(temp.getChungMinhThuModel().getSoCMT());
+                    NhanKhauBean info = nhanKhauService.getNhanKhau(temp.getNhanKhauModel().getID());
                     InfoJframe infoJframe = new InfoJframe(info.toString(), parentJFrame);
                     infoJframe.setLocationRelativeTo(null);
                     infoJframe.setVisible(true);

@@ -1,11 +1,14 @@
 package controllers.HoKhauManagerController;
 
 import Bean.HoKhauBean;
+import Bean.NhanKhauBean;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.EventObject;
 import java.util.List;
 import javax.swing.JPanel;
@@ -16,13 +19,14 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import services.HoKhauService;
+import services.MysqlConnection;
 import utility.TableModelHoKhau;
 
 /**
  *
  * @author Hai
  */
-public class ChuyenDiNoiKhacController {
+public class ThemThanhVienController {
     private HoKhauBean hoKhauBean;
     private final HoKhauService hoKhauService = new HoKhauService();
     private JTextField searchJtf;
@@ -34,8 +38,8 @@ public class ChuyenDiNoiKhacController {
     private JTextField tenChuHoJtf;
     private JTextField maKhuVucJtf;
     private JTextField diaChiJtf;
-
-    public ChuyenDiNoiKhacController(HoKhauBean hoKhauBean, JTextField searchJtf, JPanel tableJpn) {
+    
+    public ThemThanhVienController(HoKhauBean hoKhauBean, JTextField searchJtf, JPanel tableJpn) {
         this.hoKhauBean = hoKhauBean;
         this.searchJtf = searchJtf;
         this.tableJpn = tableJpn;
@@ -131,7 +135,23 @@ public class ChuyenDiNoiKhacController {
         tableJpn.validate();
         tableJpn.repaint();
     }
-
+    public boolean addNew(NhanKhauBean nhanKhauBean, HoKhauBean hoKhauBean, String quanHeVoiChuHo){
+        String sql = "INSERT INTO thanh_vien_cua_ho(idNhanKhau, idHoKhau, quanHeVoiChuHo) value (?, ?, ?)";
+        try {
+            Connection connection = MysqlConnection.getMysqlConnection();
+            PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(sql);
+            preparedStatement.setInt(1, nhanKhauBean.getNhanKhauModel().getID());
+            preparedStatement.setInt(2, hoKhauBean.getHoKhauModel().getID());
+            preparedStatement.setString(3, quanHeVoiChuHo);
+            preparedStatement.execute();
+            preparedStatement.close();
+            connection.close();
+            return true;
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
     public HoKhauBean getHoKhauBean() {
         return hoKhauBean;
     }

@@ -276,5 +276,17 @@ public class HoKhauService {
             System.out.println("services.HoKhauService.chuyenDi()");
             System.out.println(e.getMessage());
         }
+        sql = "UPDATE nhan_khau SET nhan_khau.ngayChuyenDi = NOW(), "
+                + "nhan_khau.lyDoChuyenDi = '" + lyDoChuyen +"', "
+                + "nhan_khau.diaChiMoi = '" + noiChuyenDen + "' "
+                + "WHERE nhan_khau.ID in (SELECT thanh_vien_cua_ho.idNhanKhau ID FROM thanh_vien_cua_ho WHERE thanh_vien_cua_ho.idHoKhau = " + idhoKhau + ")";
+        try {
+            Connection connection = MysqlConnection.getMysqlConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            int rs = preparedStatement.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("services.HoKhauService.chuyenDi()");
+            System.out.println(e.getMessage());
+        }
     }
 }
