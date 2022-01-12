@@ -25,8 +25,6 @@ public class LoginController {
         }
         while (rs.next()) {                
             if (rs.getString("passwd") == null ? passwod == null : rs.getString("passwd").equals(passwod)) {
-                System.out.println(rs.getString("passwd"));
-                System.out.println(rs.getString("userName"));
                 LoginController.currentUser.setID(rs.getInt("ID"));
                 LoginController.currentUser.setUserName(rs.getString("userName"));
                 LoginController.currentUser.setRoles(rs.getInt("role"));

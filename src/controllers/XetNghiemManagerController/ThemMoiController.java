@@ -20,7 +20,7 @@ public class ThemMoiController {
         
         Connection connection = MysqlConnection.getMysqlConnection();
         String query = "INSERT INTO "
-                    + "cach_ly(nhanKhauID, ngayXetNghiem, noiXetNghiem," 
+                    + "xet_nghiem(nhanKhauID, ngayXetNghiem, noiXetNghiem," 
                     + "hinhThucXetNghiem, ketQuaXetNghiem) "
                     + " values (?, ?, ?, ?, ?)";
         PreparedStatement preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);

@@ -119,7 +119,6 @@ public class ChuyenDiNoiKhacController {
                 tenChuHoJtf.setText(hoKhauBean.getChuHo().getHoTen());
                 maKhuVucJtf.setText(hoKhauBean.getHoKhauModel().getMaKhuVuc());
                 diaChiJtf.setText(hoKhauBean.getHoKhauModel().getDiaChi());
-                System.out.println(hoKhauBean.getHoKhauModel().getMaKhuVuc());
             }
             
         });
