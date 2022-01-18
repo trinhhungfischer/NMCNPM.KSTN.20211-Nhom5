@@ -64,7 +64,6 @@ public class NhanKhauManagePanel extends javax.swing.JPanel {
             .addGap(0, 389, Short.MAX_VALUE)
         );
 
-        addNewBtn.setBackground(new java.awt.Color(255, 255, 255));
         addNewBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         addNewBtn.setText("Thêm mới");
         addNewBtn.addActionListener(new java.awt.event.ActionListener() {

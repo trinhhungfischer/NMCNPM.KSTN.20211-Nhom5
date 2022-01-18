@@ -3,7 +3,9 @@ package quanlynhankhau;
 import java.util.Calendar;
 import javax.swing.UIManager;
 import views.LoginUI;
+import views.themes.MyTheme;
 
+        
 /**
  *
  * @author Hai
@@ -14,7 +16,7 @@ public class QuanLyNhanKhau {
     
     public static void main(String[] args){
         try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            UIManager.setLookAndFeel(new MyTheme());
         } catch (Exception e) {
             System.out.println(e.toString());
         }

@@ -48,7 +48,6 @@ public class HoKhauManagePanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        themMoiBtn.setBackground(new java.awt.Color(255, 255, 255));
         themMoiBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         themMoiBtn.setText("Thêm mới");
         themMoiBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -64,7 +63,6 @@ public class HoKhauManagePanel extends javax.swing.JPanel {
             }
         });
 
-        tachHoKhauBtn.setBackground(new java.awt.Color(255, 255, 255));
         tachHoKhauBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         tachHoKhauBtn.setText("Tách HK");
         tachHoKhauBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -73,7 +71,6 @@ public class HoKhauManagePanel extends javax.swing.JPanel {
             }
         });
 
-        chuyenDiBtn.setBackground(new java.awt.Color(255, 255, 255));
         chuyenDiBtn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         chuyenDiBtn.setText("Chuyển đi");
         chuyenDiBtn.addActionListener(new java.awt.event.ActionListener() {
